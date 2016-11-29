@@ -9,18 +9,21 @@
 import Foundation
 
 class Constants {
-    static var players = [String]()
-    static var game = false
-    static var counter : Int = 0
-    static var currentPlayer : Int = 0
-    static func p (a : Int) -> String {
-        return players[a]
-    }
-    static func step() {
+    
+    private static var players = [String]()
+    private static var game = false
+    private static var counter : Int = 0
+    private static var currentPlayer : Int = 0
+
+    //pre: player -- uuidString curretn player 
+    //post: true -- step is success
+    //      false -- step if failed
+    static func step(player : String) -> Bool {
+        if players[currentPlayer] != player {return false}
         currentPlayer += 1
         currentPlayer %= players.count
+        return true
     }
-    
     //MARK: - need enum
     //pre: player -- uuidString current player
     //post: 0 -- game isn't started 
@@ -32,10 +35,11 @@ class Constants {
         return player == players[currentPlayer] ? 1 : 2
     }
     
-    static func startGameFor(playersInit : [UUID]) {
+    static func startGameFor(playerInit: String, playersInit : [UUID]) {
         game = true;
         players.removeAll()
         counter = 0
+        players += [playerInit]
         for p in playersInit {
             players += [p.uuidString]
         }

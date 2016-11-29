@@ -11,15 +11,15 @@ import Messages
 
 
 class CompactViewController: UIViewController {
+    var conversation : MSConversation?;
     @IBOutlet weak var UUIDLabel: UILabel!
-    var d : MSConversation?;
     @IBOutlet weak var CompactLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print (conversation?.remoteParticipantIdentifiers)
-        print (conversation?.localParticipantIdentifier)
-
+        print (conversation!.remoteParticipantIdentifiers)
+        print (conversation!.localParticipantIdentifier)
+        print (conversation!.)
         UUIDLabel.text = conversation!.localParticipantIdentifier.uuidString
         switch Constants.status(player: conversation!.localParticipantIdentifier.uuidString) {
         case 0:
@@ -37,14 +37,25 @@ class CompactViewController: UIViewController {
     }
     
     @IBAction func Button(_ sender: Any) {
+        let session = conversation?.selectedMessage?.session ?? MSSession()
+        let message = MSMessage(session: session)
+        message.summaryText = "Sent Hello World message"
+        message.accessibilityLabel = "accessibilityLabel"
+        conversation?.insert(message)
         switch Constants.status(player: conversation!.localParticipantIdentifier.uuidString) {
         case 0:
-            Constants.startGameFor(playersInit: conversation!.remoteParticipantIdentifiers)
+            Constants.startGameFor(
+                playerInit: conversation!.localParticipantIdentifier.uuidString,
+                playersInit: conversation!.remoteParticipantIdentifiers
+            )
             CompactLabel.text = "Сделайте ход"
             break
         case 1:
-            Constants.step()
-            CompactLabel.text = "Не Ваш ход"
+            if Constants.step(player: conversation!.localParticipantIdentifier.uuidString) {
+                CompactLabel.text = "Вы сделали ход"
+            } else {
+                
+            }
             break
         case 2:
             CompactLabel.text = "Не Ваш ход"
@@ -59,8 +70,7 @@ class ExpandedViewController: UIViewController {
     var conversation : MSConversation?;
     @IBOutlet weak var ExtendedLabel: UILabel!
     @IBAction func Button(_ sender: Any) {
-        Constants.counter += 1;
-        ExtendedLabel.text = "current step \(Constants.counter)";
+
     }
 }
 
