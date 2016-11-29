@@ -9,7 +9,6 @@
 import UIKit
 import Messages
 
-
 class CompactViewController: UIViewController {
     var conversation : MSConversation?;
     @IBOutlet weak var UUIDLabel: UILabel!
@@ -19,7 +18,6 @@ class CompactViewController: UIViewController {
         super.viewDidLoad()
         print (conversation!.remoteParticipantIdentifiers)
         print (conversation!.localParticipantIdentifier)
-        print (conversation!.)
         UUIDLabel.text = conversation!.localParticipantIdentifier.uuidString
         switch Constants.status(player: conversation!.localParticipantIdentifier.uuidString) {
         case 0:
@@ -39,6 +37,7 @@ class CompactViewController: UIViewController {
     @IBAction func Button(_ sender: Any) {
         let session = conversation?.selectedMessage?.session ?? MSSession()
         let message = MSMessage(session: session)
+        
         message.summaryText = "Sent Hello World message"
         message.accessibilityLabel = "accessibilityLabel"
         conversation?.insert(message)
@@ -84,7 +83,6 @@ class MessagesViewController: MSMessagesAppViewController {
         guard let conversation = activeConversation else {
             fatalError("Expected the active conversation")
         }
-        
         presentVC(for: conversation, with: presentationStyle)
     }
     

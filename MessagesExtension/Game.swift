@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Messages
 
 class Constants {
     
@@ -14,7 +15,9 @@ class Constants {
     private static var game = false
     private static var counter : Int = 0
     private static var currentPlayer : Int = 0
-
+    private static var adminPlayer : Int = 0
+    private static var lastMessage : MSMessage?
+    
     //pre: player -- uuidString curretn player 
     //post: true -- step is success
     //      false -- step if failed
@@ -24,12 +27,13 @@ class Constants {
         currentPlayer %= players.count
         return true
     }
+    
     //MARK: - need enum
     //pre: player -- uuidString current player
-    //post: 0 -- game isn't started 
-    //      1 -- curent's player step 
+    //post:-1 -- game isn't started
+    //      0 -- time for create numbers
+    //      1 -- curent's player step
     //      2 -- non current's player step
-    
     static func status(player : String) -> Int {
         if !game {return 0}
         return player == players[currentPlayer] ? 1 : 2
@@ -44,4 +48,17 @@ class Constants {
             players += [p.uuidString]
         }
     }
+    
+    static func saveMessage(message: MSMessage){
+        lastMessage = message
+    }
+    
+    static func getMessage() -> (Bool, MSMessage?) {
+        if lastMessage == nil {
+            return (false, nil)
+        } else {
+            return (true, lastMessage)
+        }
+    }
+    
 }

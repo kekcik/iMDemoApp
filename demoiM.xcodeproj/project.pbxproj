@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C9057881989B552D5B57345 /* Pods_demoiM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBDE68587D6613453F3BB2CF /* Pods_demoiM.framework */; };
 		AFE2C8781DEC9B6700BF4F55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFE2C8771DEC9B6700BF4F55 /* Assets.xcassets */; };
 		AFE2C87F1DEC9B6800BF4F55 /* MessagesExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = AFE2C87E1DEC9B6800BF4F55 /* MessagesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		AFE2C8841DEC9B6800BF4F55 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFE2C8831DEC9B6800BF4F55 /* Messages.framework */; };
@@ -41,6 +42,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		37D5E3A90D26CF6B24BA9B0F /* Pods-demoiM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demoiM.release.xcconfig"; path = "Pods/Target Support Files/Pods-demoiM/Pods-demoiM.release.xcconfig"; sourceTree = "<group>"; };
+		A2DF1EFCDCAAFEA820A2DB26 /* Pods-demoiM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demoiM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-demoiM/Pods-demoiM.debug.xcconfig"; sourceTree = "<group>"; };
 		AFE2C8741DEC9B6700BF4F55 /* demoiM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = demoiM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFE2C8771DEC9B6700BF4F55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AFE2C8791DEC9B6700BF4F55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -51,9 +54,18 @@
 		AFE2C88B1DEC9B6800BF4F55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AFE2C88D1DEC9B6800BF4F55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFE2C8971DECE4C900BF4F55 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		EBDE68587D6613453F3BB2CF /* Pods_demoiM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_demoiM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		99DD3775AC2293C337C2E8EE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C9057881989B552D5B57345 /* Pods_demoiM.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AFE2C87B1DEC9B6800BF4F55 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -65,6 +77,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		978F2515029A2CC8CBA9E2D5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A2DF1EFCDCAAFEA820A2DB26 /* Pods-demoiM.debug.xcconfig */,
+				37D5E3A90D26CF6B24BA9B0F /* Pods-demoiM.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		AFE2C86D1DEC9B6700BF4F55 = {
 			isa = PBXGroup;
 			children = (
@@ -72,6 +93,7 @@
 				AFE2C8851DEC9B6800BF4F55 /* MessagesExtension */,
 				AFE2C8821DEC9B6800BF4F55 /* Frameworks */,
 				AFE2C8751DEC9B6700BF4F55 /* Products */,
+				978F2515029A2CC8CBA9E2D5 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				AFE2C8831DEC9B6800BF4F55 /* Messages.framework */,
+				EBDE68587D6613453F3BB2CF /* Pods_demoiM.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -120,8 +143,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AFE2C8941DEC9B6800BF4F55 /* Build configuration list for PBXNativeTarget "demoiM" */;
 			buildPhases = (
+				C1C1BFD4AA48CFF8D4E2F8CC /* [CP] Check Pods Manifest.lock */,
 				AFE2C8721DEC9B6700BF4F55 /* Resources */,
 				AFE2C8931DEC9B6800BF4F55 /* Embed App Extensions */,
+				99DD3775AC2293C337C2E8EE /* Frameworks */,
+				320E4301374BD233BFB15A3A /* [CP] Embed Pods Frameworks */,
+				15177AE8FD2F14D5E0AD4423 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -210,6 +237,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		15177AE8FD2F14D5E0AD4423 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-demoiM/Pods-demoiM-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		320E4301374BD233BFB15A3A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-demoiM/Pods-demoiM-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C1C1BFD4AA48CFF8D4E2F8CC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AFE2C87A1DEC9B6800BF4F55 /* Sources */ = {
@@ -366,6 +441,7 @@
 		};
 		AFE2C8951DEC9B6800BF4F55 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A2DF1EFCDCAAFEA820A2DB26 /* Pods-demoiM.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -379,6 +455,7 @@
 		};
 		AFE2C8961DEC9B6800BF4F55 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 37D5E3A90D26CF6B24BA9B0F /* Pods-demoiM.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
