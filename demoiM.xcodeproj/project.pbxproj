@@ -7,14 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3C9057881989B552D5B57345 /* Pods_demoiM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBDE68587D6613453F3BB2CF /* Pods_demoiM.framework */; };
+		AF039A671DEECFE90090E0F6 /* bull.JPEG in Resources */ = {isa = PBXBuildFile; fileRef = AF039A661DEECFE90090E0F6 /* bull.JPEG */; };
+		AF039A6A1DEED7870090E0F6 /* MessageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF039A691DEED7870090E0F6 /* MessageManager.swift */; };
 		AFE2C8781DEC9B6700BF4F55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFE2C8771DEC9B6700BF4F55 /* Assets.xcassets */; };
 		AFE2C87F1DEC9B6800BF4F55 /* MessagesExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = AFE2C87E1DEC9B6800BF4F55 /* MessagesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		AFE2C8841DEC9B6800BF4F55 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFE2C8831DEC9B6800BF4F55 /* Messages.framework */; };
+		AFE2C8841DEC9B6800BF4F55 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFE2C8831DEC9B6800BF4F55 /* Messages.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		AFE2C8871DEC9B6800BF4F55 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE2C8861DEC9B6800BF4F55 /* MessagesViewController.swift */; };
 		AFE2C88A1DEC9B6800BF4F55 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFE2C8881DEC9B6800BF4F55 /* MainInterface.storyboard */; };
 		AFE2C88C1DEC9B6800BF4F55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFE2C88B1DEC9B6800BF4F55 /* Assets.xcassets */; };
-		AFE2C8981DECE4C900BF4F55 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE2C8971DECE4C900BF4F55 /* Game.swift */; };
+		AFE2C8981DECE4C900BF4F55 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE2C8971DECE4C900BF4F55 /* GameManager.swift */; };
+		E8C2714254CF7F88A8FA5C4D /* Pods_demoiM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A54EB0A8558F9E06DEA5E815 /* Pods_demoiM.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,8 +44,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		37D5E3A90D26CF6B24BA9B0F /* Pods-demoiM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demoiM.release.xcconfig"; path = "Pods/Target Support Files/Pods-demoiM/Pods-demoiM.release.xcconfig"; sourceTree = "<group>"; };
-		A2DF1EFCDCAAFEA820A2DB26 /* Pods-demoiM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demoiM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-demoiM/Pods-demoiM.debug.xcconfig"; sourceTree = "<group>"; };
+		61D6497C52DFD4DCD9C67FF3 /* Pods-demoiM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demoiM.release.xcconfig"; path = "Pods/Target Support Files/Pods-demoiM/Pods-demoiM.release.xcconfig"; sourceTree = "<group>"; };
+		A54EB0A8558F9E06DEA5E815 /* Pods_demoiM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_demoiM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF039A5C1DED9B520090E0F6 /* GoogleToolboxForMac.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleToolboxForMac.framework; path = "../../Library/Developer/Xcode/DerivedData/demoiM-fabrgglchdwpghdpgofabwlsmgls/Build/Products/Debug-iphonesimulator/GoogleToolboxForMac/GoogleToolboxForMac.framework"; sourceTree = "<group>"; };
+		AF039A5E1DED9B970090E0F6 /* Pods_demoiM.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_demoiM.framework; path = "Pods/../build/Debug-iphoneos/Pods_demoiM.framework"; sourceTree = "<group>"; };
+		AF039A661DEECFE90090E0F6 /* bull.JPEG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bull.JPEG; sourceTree = "<group>"; };
+		AF039A691DEED7870090E0F6 /* MessageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageManager.swift; sourceTree = "<group>"; };
 		AFE2C8741DEC9B6700BF4F55 /* demoiM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = demoiM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFE2C8771DEC9B6700BF4F55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AFE2C8791DEC9B6700BF4F55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -53,8 +59,8 @@
 		AFE2C8891DEC9B6800BF4F55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		AFE2C88B1DEC9B6800BF4F55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AFE2C88D1DEC9B6800BF4F55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AFE2C8971DECE4C900BF4F55 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
-		EBDE68587D6613453F3BB2CF /* Pods_demoiM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_demoiM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFE2C8971DECE4C900BF4F55 /* GameManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
+		ECEEFB3251E1039BAF912EF2 /* Pods-demoiM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demoiM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-demoiM/Pods-demoiM.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C9057881989B552D5B57345 /* Pods_demoiM.framework in Frameworks */,
+				E8C2714254CF7F88A8FA5C4D /* Pods_demoiM.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,23 +83,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		978F2515029A2CC8CBA9E2D5 /* Pods */ = {
+		79C6705D64002FD5D26E0D86 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				A2DF1EFCDCAAFEA820A2DB26 /* Pods-demoiM.debug.xcconfig */,
-				37D5E3A90D26CF6B24BA9B0F /* Pods-demoiM.release.xcconfig */,
+				ECEEFB3251E1039BAF912EF2 /* Pods-demoiM.debug.xcconfig */,
+				61D6497C52DFD4DCD9C67FF3 /* Pods-demoiM.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		AF039A651DEECFE90090E0F6 /* img */ = {
+			isa = PBXGroup;
+			children = (
+				AF039A661DEECFE90090E0F6 /* bull.JPEG */,
+			);
+			path = img;
+			sourceTree = "<group>";
+		};
+		AF039A681DEED76C0090E0F6 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				AFE2C8971DECE4C900BF4F55 /* GameManager.swift */,
+				AF039A691DEED7870090E0F6 /* MessageManager.swift */,
+			);
+			name = Manager;
 			sourceTree = "<group>";
 		};
 		AFE2C86D1DEC9B6700BF4F55 = {
 			isa = PBXGroup;
 			children = (
+				AF039A651DEECFE90090E0F6 /* img */,
 				AFE2C8761DEC9B6700BF4F55 /* demoiM */,
 				AFE2C8851DEC9B6800BF4F55 /* MessagesExtension */,
 				AFE2C8821DEC9B6800BF4F55 /* Frameworks */,
 				AFE2C8751DEC9B6700BF4F55 /* Products */,
-				978F2515029A2CC8CBA9E2D5 /* Pods */,
+				79C6705D64002FD5D26E0D86 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -118,8 +142,10 @@
 		AFE2C8821DEC9B6800BF4F55 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AF039A5E1DED9B970090E0F6 /* Pods_demoiM.framework */,
+				AF039A5C1DED9B520090E0F6 /* GoogleToolboxForMac.framework */,
 				AFE2C8831DEC9B6800BF4F55 /* Messages.framework */,
-				EBDE68587D6613453F3BB2CF /* Pods_demoiM.framework */,
+				A54EB0A8558F9E06DEA5E815 /* Pods_demoiM.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -127,11 +153,11 @@
 		AFE2C8851DEC9B6800BF4F55 /* MessagesExtension */ = {
 			isa = PBXGroup;
 			children = (
+				AF039A681DEED76C0090E0F6 /* Manager */,
 				AFE2C8861DEC9B6800BF4F55 /* MessagesViewController.swift */,
 				AFE2C8881DEC9B6800BF4F55 /* MainInterface.storyboard */,
 				AFE2C88B1DEC9B6800BF4F55 /* Assets.xcassets */,
 				AFE2C88D1DEC9B6800BF4F55 /* Info.plist */,
-				AFE2C8971DECE4C900BF4F55 /* Game.swift */,
 			);
 			path = MessagesExtension;
 			sourceTree = "<group>";
@@ -143,12 +169,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AFE2C8941DEC9B6800BF4F55 /* Build configuration list for PBXNativeTarget "demoiM" */;
 			buildPhases = (
-				C1C1BFD4AA48CFF8D4E2F8CC /* [CP] Check Pods Manifest.lock */,
+				0C6219B290587CCB2E93FC37 /* [CP] Check Pods Manifest.lock */,
 				AFE2C8721DEC9B6700BF4F55 /* Resources */,
 				AFE2C8931DEC9B6800BF4F55 /* Embed App Extensions */,
 				99DD3775AC2293C337C2E8EE /* Frameworks */,
-				320E4301374BD233BFB15A3A /* [CP] Embed Pods Frameworks */,
-				15177AE8FD2F14D5E0AD4423 /* [CP] Copy Pods Resources */,
+				BB202856C26909DDE4F10AB4 /* [CP] Embed Pods Frameworks */,
+				5F26A387762767195A4A3F36 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -231,6 +257,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF039A671DEECFE90090E0F6 /* bull.JPEG in Resources */,
 				AFE2C88C1DEC9B6800BF4F55 /* Assets.xcassets in Resources */,
 				AFE2C88A1DEC9B6800BF4F55 /* MainInterface.storyboard in Resources */,
 			);
@@ -239,37 +266,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		15177AE8FD2F14D5E0AD4423 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-demoiM/Pods-demoiM-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		320E4301374BD233BFB15A3A /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-demoiM/Pods-demoiM-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C1C1BFD4AA48CFF8D4E2F8CC /* [CP] Check Pods Manifest.lock */ = {
+		0C6219B290587CCB2E93FC37 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -284,6 +281,36 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		5F26A387762767195A4A3F36 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-demoiM/Pods-demoiM-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BB202856C26909DDE4F10AB4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-demoiM/Pods-demoiM-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -291,8 +318,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF039A6A1DEED7870090E0F6 /* MessageManager.swift in Sources */,
 				AFE2C8871DEC9B6800BF4F55 /* MessagesViewController.swift in Sources */,
-				AFE2C8981DECE4C900BF4F55 /* Game.swift in Sources */,
+				AFE2C8981DECE4C900BF4F55 /* GameManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,7 +444,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
 				DEVELOPMENT_TEAM = B5SWW93MKD;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/Pods/Google-Mobile-Ads-SDK/Frameworks",
+				);
 				INFOPLIST_FILE = MessagesExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.trofimov.demoiM.MessagesExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -430,7 +464,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
 				DEVELOPMENT_TEAM = B5SWW93MKD;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/Pods/Google-Mobile-Ads-SDK/Frameworks",
+				);
 				INFOPLIST_FILE = MessagesExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.trofimov.demoiM.MessagesExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -441,11 +481,15 @@
 		};
 		AFE2C8951DEC9B6800BF4F55 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A2DF1EFCDCAAFEA820A2DB26 /* Pods-demoiM.debug.xcconfig */;
+			baseConfigurationReference = ECEEFB3251E1039BAF912EF2 /* Pods-demoiM.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = B5SWW93MKD;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/Google-Mobile-Ads-SDK/Frameworks",
+				);
 				INFOPLIST_FILE = demoiM/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = com.trofimov.demoiM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -455,11 +499,15 @@
 		};
 		AFE2C8961DEC9B6800BF4F55 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 37D5E3A90D26CF6B24BA9B0F /* Pods-demoiM.release.xcconfig */;
+			baseConfigurationReference = 61D6497C52DFD4DCD9C67FF3 /* Pods-demoiM.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = B5SWW93MKD;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/Google-Mobile-Ads-SDK/Frameworks",
+				);
 				INFOPLIST_FILE = demoiM/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = com.trofimov.demoiM;
 				PRODUCT_NAME = "$(TARGET_NAME)";

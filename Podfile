@@ -1,9 +1,6 @@
-source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
 
-platform :ios, '7.0'
-
-target ‘demoiM’ do
-  use_frameworks!
-  pod 'Firebase/Core'
-  pod 'Firebase/AdMob'
+target 'demoiM' do
+    pod 'Firebase/Core'
+    pod 'Firebase/AdMob'
 end

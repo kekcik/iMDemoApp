@@ -67,18 +67,25 @@
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES"
       launchAutomaticallySubstyle = "2">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <PathRunnable
+         runnableDebuggingMode = "0"
+         FilePath = "/&lt;placeholder&gt;">
+      </PathRunnable>
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AFE2C8731DEC9B6700BF4F55"
-            BuildableName = "demoiM.app"
-            BlueprintName = "demoiM"
+            BlueprintIdentifier = "AFE2C87D1DEC9B6800BF4F55"
+            BuildableName = "MessagesExtension.appex"
+            BlueprintName = "MessagesExtension"
             ReferencedContainer = "container:demoiM.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
+      <LocationScenarioReference
+         identifier = "com.apple.dt.IDEFoundation.CurrentLocationScenarioIdentifier"
+         referenceType = "1">
+      </LocationScenarioReference>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"

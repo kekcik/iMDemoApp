@@ -8,69 +8,84 @@
 
 import UIKit
 import Messages
+import GoogleMobileAds
+
+
+
+class Calculator {
+    func Calculate() -> (Int, Int) {
+        return (0, 0)
+    }
+}
 
 class CompactViewController: UIViewController {
     var conversation : MSConversation?;
     @IBOutlet weak var UUIDLabel: UILabel!
     @IBOutlet weak var CompactLabel: UILabel!
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        print (conversation!.remoteParticipantIdentifiers)
-        print (conversation!.localParticipantIdentifier)
-        UUIDLabel.text = conversation!.localParticipantIdentifier.uuidString
-        switch Constants.status(player: conversation!.localParticipantIdentifier.uuidString) {
-        case 0:
-            CompactLabel.text = "Начните игру"
-            break
-        case 1:
-            CompactLabel.text = "Ваш ход"
-            break
-        case 2:
-            CompactLabel.text = "Не Ваш ход"
-            break
-        default:
-            break
-        }
-    }
-    
     @IBAction func Button(_ sender: Any) {
-        let session = conversation?.selectedMessage?.session ?? MSSession()
-        let message = MSMessage(session: session)
         
-        message.summaryText = "Sent Hello World message"
-        message.accessibilityLabel = "accessibilityLabel"
-        conversation?.insert(message)
-        switch Constants.status(player: conversation!.localParticipantIdentifier.uuidString) {
-        case 0:
-            Constants.startGameFor(
-                playerInit: conversation!.localParticipantIdentifier.uuidString,
-                playersInit: conversation!.remoteParticipantIdentifiers
-            )
-            CompactLabel.text = "Сделайте ход"
-            break
-        case 1:
-            if Constants.step(player: conversation!.localParticipantIdentifier.uuidString) {
-                CompactLabel.text = "Вы сделали ход"
-            } else {
-                
-            }
-            break
-        case 2:
-            CompactLabel.text = "Не Ваш ход"
-            break
-        default:
-            break
-        }
     }
 }
 
 class ExpandedViewController: UIViewController {
+    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var butLabel: UIButton!
+    @IBAction func buttonGo(_ sender: Any) {
+        //textField.isHidden = true
+    }
+    
     var conversation : MSConversation?;
     @IBOutlet weak var ExtendedLabel: UILabel!
-    @IBAction func Button(_ sender: Any) {
-
+    override func viewDidLoad() {
+        if Game.flag {
+            MessageService.SendResponceMessage(conversation: conversation!)
+            Game.flag = false
+        }
+        super.viewDidLoad()
+        if (conversation?.selectedMessage) != nil {
+            Game.updateGame(url: (conversation?.selectedMessage?.url)!)
+        } else {
+            ExtendedLabel.text = "Перейдите по сообщению или начните игру"
+            butLabel.setTitle("Начните игру", for: UIControlState.normal)
+        }
+        if (Game.status == 1) {
+            ExtendedLabel.text = "Сделайте ход для подтверждения"
+            butLabel.setTitle("Волшебная кнопка!", for: UIControlState.normal)
+        }
+        if (Game.status == 2 || Game.status == 3) {
+            ExtendedLabel.text = "Сделайте ход"
+            butLabel.setTitle("Волшебная кнопка!", for: UIControlState.normal)
+        }
+        
     }
+    @IBAction func But(_ sender: Any) {
+        if Game.status == 0 {
+            Game.startGame()
+            MessageService.SendStartMessage(conversation: conversation!)
+        } else
+        if Game.status == 1 {
+            Game.gameConfirm(step: Int(textField.text!)!)
+            MessageService.SendStepMessage(conversation: conversation!)
+        } else
+        if Game.status == 2 {
+            if Game.admin {
+                Game.makeStep(step: Int(textField.text!)!)
+            } else {
+                ExtendedLabel.text = "Не твой ход"
+            }
+            MessageService.SendStepMessage(conversation: conversation!)
+        }
+        else
+        if Game.status == 3 {
+            if Game.admin {
+                ExtendedLabel.text = "Не твой ход"
+            } else {
+                Game.makeStep(step: Int(textField.text!)!)
+            }
+            MessageService.SendStepMessage(conversation: conversation!)
+        }
+    }
+    
 }
 
 class MessagesViewController: MSMessagesAppViewController {
