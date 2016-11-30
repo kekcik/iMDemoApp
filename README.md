@@ -7,6 +7,6 @@
 
 Немного скринов: 
 
-![alt tag](https://github.com/kekcik/iMDemoApp/blob/master/imgForGit/IMG_6110.PNG)
-![alt tag](https://github.com/kekcik/iMDemoApp/blob/master/imgForGit/IMG_6112.PNG)
-![alt tag](https://github.com/kekcik/iMDemoApp/blob/master/imgForGit/IMG_6113.PNG)
+![alt tag](https://github.com/kekcik/iMDemoApp/blob/master/imgForGit/s1.JPEG)
+![alt tag](https://github.com/kekcik/iMDemoApp/blob/master/imgForGit/s3.JPEG)
+![alt tag](https://github.com/kekcik/iMDemoApp/blob/master/imgForGit/s4.JPEG)
