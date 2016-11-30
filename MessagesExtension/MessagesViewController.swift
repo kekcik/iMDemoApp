@@ -64,8 +64,12 @@ class ExpandedViewController: UIViewController {
             MessageService.SendStartMessage(conversation: conversation!)
         } else
         if Game.status == 1 {
-            Game.gameConfirm(step: Int(textField.text!)!)
-            MessageService.SendStepMessage(conversation: conversation!)
+            if Game.admin {
+                ExtendedLabel.text = "Игрок еще не подтвердил игру"
+            } else {
+                Game.gameConfirm(step: Int(textField.text!)!)
+                MessageService.SendStepMessage(conversation: conversation!)
+            }
         } else
         if Game.status == 2 {
             if Game.admin {
