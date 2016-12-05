@@ -11,51 +11,46 @@ import Messages
 
 class Game {
     /*\
-     0 -- нет игры
      1 -- предложение игры
-     2 -- ход начавшего игру
-     3 -- ход не начавшего игру :)
+     2 -- ход первого
+     3 -- ход второго
+     4 -- победа первого
+     5 -- победа второго
     \*/
-    static var status : Int = 0
-    static var time = 0
-    static var admin = false
-    static var myGuess: Int = 5678
-    static var myNumber : Int = 1234
-    static var flag = false
-    static func updateGame(url: URL) {
+    static var status = 0
+    static var firstNumber = 0
+    static var secondNumber = 0
+    static var firstRates = ""
+    
+    ам авт мтв амв м
+    мвам вам
+    static var secondRates = ""
+    static var firstUUID = ""
+    static var secondUUID = ""
+    
+    static func UpdateParams(url: URL) {
         let queryItems = URLComponents(string: url.absoluteString)?.queryItems
-        let status : Int = Int((queryItems?.filter({$0.name == "status" as String}).first?.value)!)!
-        let guess : Int = Int((queryItems?.filter({$0.name == "guess" as String}).first?.value)!)!
-        let time : Int = Int((queryItems?.filter({$0.name == "time" as String}).first?.value)!)!
-        print(status)
-        print(guess)
-        print(time)
-        self.status = status
-        self.time = time
-        self.myGuess = guess
+        self.status =       Int((queryItems?.filter({$0.name == "status" as String}).first?.value)!)!
+        self.firstNumber =  Int((queryItems?.filter({$0.name == "fn" as String}).first?.value)!)!
+        self.secondNumber = Int((queryItems?.filter({$0.name == "sn" as String}).first?.value)!)!
+        self.firstRates = (queryItems?.filter({$0.name == "fr" as String}).first?.value)!
+        self.secondRates = (queryItems?.filter({$0.name == "sr" as String}).first?.value)!
+        self.firstUUID = (queryItems?.filter({$0.name == "fi" as String}).first?.value)!
+        self.secondUUID = (queryItems?.filter({$0.name == "si" as String}).first?.value)!
     }
     
-    static func startGame() {
-        status = 1
-        admin = true
-        time += 1
-    }
-    static func gameConfirm(step: Int) {
-        self.myGuess = step
-        flag = true
-        status = 2
-        admin = false
-        time += 1
-    }
-    
-    static func makeStep(step: Int) {
-        flag = true
-        self.myGuess = step
-        status = status == 2 ? 3 : 2
-        time += 1
-    }
-    
-    static func calculateResult() -> (Int, Int) {
-        return (2, 2)
+    static func ParseRates(str: String) -> [Int] {
+        var t = 0
+        var cur = 0
+        for c in str.characters.filter({true} -> Bool ) {
+            cur *= 10
+            cur += Int()!
+            if t == 4 {
+                print(cur)
+                cur = 0
+                t = 0
+            }
+        }
+        return [1];
     }
 }

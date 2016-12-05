@@ -10,6 +10,7 @@ import Foundation
 import Messages
 
 class MessageService {
+    
     static func SendStepMessage (conversation: MSConversation) {
         let session = conversation.selectedMessage?.session ?? MSSession()
         let layout = MSMessageTemplateLayout()

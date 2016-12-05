@@ -20,74 +20,47 @@ class Calculator {
 
 class CompactViewController: UIViewController {
     var conversation : MSConversation?;
-    @IBOutlet weak var UUIDLabel: UILabel!
-    @IBOutlet weak var CompactLabel: UILabel!
+
+    @IBOutlet weak var Label: UILabel!
+    
+    @IBOutlet weak var constrain: NSLayoutConstraint!
+    override func viewDidLoad() {
+        Label.text = "Label \(self.view.frame.height) * \(self.view.frame.width)\n\(Label.frame.height) * \(Label.frame.width)\n\(Label.minimumScaleFactor)";
+    }
+    
     @IBAction func Button(_ sender: Any) {
-        
     }
 }
 
 class ExpandedViewController: UIViewController {
-    @IBOutlet weak var textField: UITextField!
-    @IBOutlet weak var butLabel: UIButton!
-    @IBAction func buttonGo(_ sender: Any) {
-        //textField.isHidden = true
-    }
-    
     var conversation : MSConversation?;
-    @IBOutlet weak var ExtendedLabel: UILabel!
-    override func viewDidLoad() {
-        if Game.flag {
-            MessageService.SendResponceMessage(conversation: conversation!)
-            Game.flag = false
-        }
-        super.viewDidLoad()
-        if (conversation?.selectedMessage) != nil {
-            Game.updateGame(url: (conversation?.selectedMessage?.url)!)
-        } else {
-            ExtendedLabel.text = "Перейдите по сообщению или начните игру"
-            butLabel.setTitle("Начните игру", for: UIControlState.normal)
-        }
-        if (Game.status == 1) {
-            ExtendedLabel.text = "Сделайте ход для подтверждения"
-            butLabel.setTitle("Волшебная кнопка!", for: UIControlState.normal)
-        }
-        if (Game.status == 2 || Game.status == 3) {
-            ExtendedLabel.text = "Сделайте ход"
-            butLabel.setTitle("Волшебная кнопка!", for: UIControlState.normal)
-        }
-        
+
+    @IBOutlet weak var mainButton: UIButton!
+    @IBOutlet weak var statusLabel: UILabel!
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        GameManager.UpdateParams();
+        //здесь надо обновить локальные переменные
     }
-    @IBAction func But(_ sender: Any) {
-        if Game.status == 0 {
-            Game.startGame()
-            MessageService.SendStartMessage(conversation: conversation!)
-        } else
-        if Game.status == 1 {
-            if Game.admin {
-                ExtendedLabel.text = "Игрок еще не подтвердил игру"
-            } else {
-                Game.gameConfirm(step: Int(textField.text!)!)
-                MessageService.SendStepMessage(conversation: conversation!)
-            }
-        } else
-        if Game.status == 2 {
-            if Game.admin {
-                Game.makeStep(step: Int(textField.text!)!)
-            } else {
-                ExtendedLabel.text = "Не твой ход"
-            }
-            MessageService.SendStepMessage(conversation: conversation!)
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        if conversation?.selectedMessage == nil {
+            statusLabel.text = "новая игра";
+        } else {
+            statusLabel.text = "открылся из сообщения";
         }
-        else
-        if Game.status == 3 {
-            if Game.admin {
-                ExtendedLabel.text = "Не твой ход"
-            } else {
-                Game.makeStep(step: Int(textField.text!)!)
-            }
-            MessageService.SendStepMessage(conversation: conversation!)
-        }
+    }
+    @IBAction func mainButtonAction(_ sender: Any) {
+        print("sending start")
+        let session = conversation?.selectedMessage?.session ?? MSSession()
+        let layout = MSMessageTemplateLayout()
+        let result = Game.calculateResult()
+        layout.caption = "У тебя \(result.0) быка и \(result.1) коровы \nЯ походил. \(Game.myGuess)?"
+        let message = MSMessage(session: session)
+        message.layout = layout
+        message.url = URL(string: "http://bullsandcows.net?status=\(Game.status)&guess=\(Game.myGuess)&time=\(Game.time)")
+        message.shouldExpire = false
+        conversation?.insert(message)
     }
     
 }
